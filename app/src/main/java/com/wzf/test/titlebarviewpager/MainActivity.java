@@ -70,7 +70,7 @@ public class MainActivity extends FragmentActivity {
         screenWidth = getWindowManager().getDefaultDisplay().getWidth();
         mTabClickListener = new TopTabClickListener();
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
-
+        mViewPager.setPageTransformer(true, new ScalePageTransformer());
         initFragmentPages();
         myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), mPages);
         mViewPager.setAdapter(myPagerAdapter);
